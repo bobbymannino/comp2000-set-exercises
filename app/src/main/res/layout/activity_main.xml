@@ -27,6 +27,16 @@
             android:hint="Email"
             android:inputType="textEmailAddress" />
 
+        <TextView
+            android:id="@+id/errorLabel"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="There was an issue logging in, try again"
+            android:textSize="12dp"
+            android:textColor="@android:color/holo_red_dark"
+            />
+
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -34,6 +44,7 @@
             android:inputType="textPassword" />
 
         <Button
+            android:id="@+id/loginButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Login" />
