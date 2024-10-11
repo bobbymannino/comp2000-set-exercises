@@ -1,5 +1,6 @@
 package com.example.comp2000setexercises;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -15,6 +16,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class MainActivity extends AppCompatActivity {
     Button loginButton;
     TextView errorLabel;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,8 +41,12 @@ public class MainActivity extends AppCompatActivity {
                 hideError();
 
                 if (choice < 1) {
-                   // Goto emplyee side
+                    // Goto emplyee side
+                    Intent intent = new Intent(MainActivity.this, EmployeeActivity.class);
+                    MainActivity.this.startActivity(intent);
                 } else if (choice < 2) {
+                    Intent intent = new Intent(MainActivity.this, AdminActivity.class);
+                    MainActivity.this.startActivity(intent);
                     // Goto admin side
                 } else {
                     showError();

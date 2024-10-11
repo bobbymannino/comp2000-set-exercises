@@ -13,6 +13,12 @@
         android:theme="@style/Theme.COMP2000SetExercises"
         tools:targetApi="31">
         <activity
+            android:name=".EmployeeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
