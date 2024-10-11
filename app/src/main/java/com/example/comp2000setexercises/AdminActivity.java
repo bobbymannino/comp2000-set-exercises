@@ -1,6 +1,9 @@
 package com.example.comp2000setexercises;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +12,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class AdminActivity extends AppCompatActivity {
+    Button goHomeButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,5 +24,19 @@ public class AdminActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        goHomeButton = findViewById(R.id.goHomeButton);
+
+        goHomeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToLoginScreen();
+            }
+        });
+    }
+
+    void goToLoginScreen() {
+        Intent intent = new Intent(AdminActivity.this, MainActivity.class);
+        AdminActivity.this.startActivity(intent);
     }
 }
