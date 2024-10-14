@@ -2,21 +2,22 @@ package com.example.comp2000setexercises;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-import androidx.viewpager.widget.ViewPager;
+import androidx.fragment.app.FragmentContainerView;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.tabs.TabLayout;
 
 public class EmployeeActivity extends AppCompatActivity {
     TabLayout tabs;
-    ViewPager2 pager;
-    ViewPagerAdapter adapter;
+
+    FragmentContainerView settingsFrag, detailsFrag, holidayFrag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,29 +31,43 @@ public class EmployeeActivity extends AppCompatActivity {
         });
 
         tabs = findViewById(R.id.tabs);
-        pager = findViewById(R.id.viewPagers);
-        adapter = new ViewPagerAdapter(this);
-
-        pager.setAdapter(adapter);
+        holidayFrag = findViewById(R.id.holidayFragment);
+        settingsFrag = findViewById(R.id.settingsFragment);
+        detailsFrag = findViewById(R.id.myDetailsFragment);
 
         tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                pager.setCurrentItem(tab.getPosition());
+                switch (tab.getPosition()) {
+                    case 0:
+                        detailsFrag.setVisibility(View.VISIBLE);
+                        break;
+                    case 1:
+                        holidayFrag.setVisibility(View.VISIBLE);
+                        break;
+                    case 2:
+                        settingsFrag.setVisibility(View.VISIBLE);
+                        break;
+                }
             }
 
             @Override
-            public void onTabUnselected(TabLayout.Tab tab) {}
+            public void onTabUnselected(TabLayout.Tab tab) {
+                switch (tab.getPosition()) {
+                    case 0:
+                        detailsFrag.setVisibility(View.GONE);
+                        break;
+                    case 1:
+                        holidayFrag.setVisibility(View.GONE);
+                        break;
+                    case 2:
+                        settingsFrag.setVisibility(View.GONE);
+                        break;
+                }
+            }
 
             @Override
-            public void onTabReselected(TabLayout.Tab tab) {}
-        });
-
-        pager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
-            @Override
-            public void onPageSelected(int pos) {
-                super.onPageSelected(pos);
-                tabs.getTabAt(pos).select();
+            public void onTabReselected(TabLayout.Tab tab) {
             }
         });
     }

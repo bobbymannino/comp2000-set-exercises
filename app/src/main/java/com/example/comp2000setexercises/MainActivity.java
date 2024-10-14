@@ -35,10 +35,13 @@ public class MainActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Double choice = Math.random() * 3;
+                double choice = Math.random() * 3;
 
                 // If i show the error on the prior click, it must be hidden on the next attempt
                 hideError();
+
+                // TODO for testing, delete this asap
+                choice = .5;
 
                 if (choice < 1) {
                     // Goto emplyee side

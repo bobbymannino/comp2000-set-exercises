@@ -7,6 +7,29 @@
     android:layout_height="match_parent"
     tools:context=".EmployeeActivity">
 
+    <androidx.fragment.app.FragmentContainerView
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/myDetailsFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:name="com.example.comp2000setexercises.EmployeeMyDetailsFragment" />
+
+    <androidx.fragment.app.FragmentContainerView
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/holidayFragment"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        android:name="com.example.comp2000setexercises.EmployeeHolidayFragment" />
+
+    <androidx.fragment.app.FragmentContainerView
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/settingsFragment"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:name="com.example.comp2000setexercises.EmployeeSettingsFragment" />
+
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabs"
         android:layout_width="match_parent"
@@ -14,26 +37,24 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <com.google.android.material.tabs.TabItem
+            android:id="@+id/detailsTabButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:icon="@drawable/ic_person"
             android:text="My Details" />
 
         <com.google.android.material.tabs.TabItem
+            android:id="@+id/holidayTabButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:icon="@drawable/ic_holiday"
             android:text="Holiday" />
 
         <com.google.android.material.tabs.TabItem
+            android:id="@+id/settingsTabButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:icon="@drawable/ic_settings"
             android:text="Settings" />
     </com.google.android.material.tabs.TabLayout>
-
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/viewPagers"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
