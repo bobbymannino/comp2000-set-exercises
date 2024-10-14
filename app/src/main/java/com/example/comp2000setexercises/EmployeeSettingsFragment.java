@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 public class EmployeeSettingsFragment extends Fragment {
-    Button goHomeButton;
+    Button goHomeButton, goAdminButton;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -24,6 +24,7 @@ public class EmployeeSettingsFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_employee_settings, container, false);
         goHomeButton = view.findViewById(R.id.goHomeButton);
+        goAdminButton = view.findViewById(R.id.goAdminButton);
 
         goHomeButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,11 +33,23 @@ public class EmployeeSettingsFragment extends Fragment {
             }
         });
 
+        goAdminButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToAdmin();
+            }
+        });
+
         return view;
     }
 
     void goToLogin() {
         Intent intent = new Intent(getActivity(), MainActivity.class);
+        this.startActivity(intent);
+    }
+
+    void goToAdmin() {
+        Intent intent = new Intent(getActivity(), AdminActivity.class);
         this.startActivity(intent);
     }
 }
