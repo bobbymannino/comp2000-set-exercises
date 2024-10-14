@@ -1,5 +1,6 @@
 package com.example.comp2000setexercises;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -70,5 +71,10 @@ public class EmployeeActivity extends AppCompatActivity {
             public void onTabReselected(TabLayout.Tab tab) {
             }
         });
+    }
+
+    void goToLogin() {
+        Intent intent = new Intent(this, MainActivity.class);
+        this.startActivity(intent);
     }
 }

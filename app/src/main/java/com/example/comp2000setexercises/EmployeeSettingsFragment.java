@@ -28,10 +28,15 @@ public class EmployeeSettingsFragment extends Fragment {
         goHomeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO call goHome in EmployeeActivity.java
+                goToLogin();
             }
         });
 
         return view;
+    }
+
+    void goToLogin() {
+        Intent intent = new Intent(getActivity(), MainActivity.class);
+        this.startActivity(intent);
     }
 }
