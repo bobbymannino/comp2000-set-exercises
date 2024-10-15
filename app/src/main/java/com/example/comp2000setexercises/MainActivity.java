@@ -40,8 +40,8 @@ public class MainActivity extends AppCompatActivity {
                 // If i show the error on the prior click, it must be hidden on the next attempt
                 hideError();
 
-                // TODO for testing, delete this asap
-                choice = .5;
+                // TODO delete me
+                choice = 1.5;
 
                 if (choice < 1) {
                     // Goto emplyee side
