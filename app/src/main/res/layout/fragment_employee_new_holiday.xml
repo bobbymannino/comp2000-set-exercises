@@ -1,13 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="32dp"
     tools:context=".EmployeeNewHolidayFragment">
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="New Holiday Frag" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Holiday"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
-</FrameLayout>
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="8dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="From" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="10-12-1979"
+        android:inputType="date" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="8dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="To" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="22-12-1979"
+        android:inputType="date" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="8dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/submitRequestButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit Request" />
+
+</LinearLayout>
